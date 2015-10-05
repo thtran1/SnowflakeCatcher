@@ -4,7 +4,7 @@ int endX = 150;
 int endY = 00;
 int screenSize = 600;
 int partSize = 10;
-int trueSpeed = 5;
+int trueSpeed = 10;
 float deg;
 int rainNum = 0;
 Snowflake [] snow;
@@ -101,7 +101,7 @@ class Snowflake
   {
     speed = trueSpeed;
     x = (int)(Math.random()*screenSize*2);
-    y = (int)(Math.random()*screenSize*2);
+    y = (int)(Math.random()*screenSize*3)-screenSize;
     isMoving = true;
     alive = true;
   }
@@ -112,8 +112,8 @@ class Snowflake
       y = -200-(rainNum*5);
       x = (int)(Math.random()*screenSize*2);
       noStroke();
-      float rad = radians(deg);
-      rotate(rad);
+     //float rad = radians(deg);
+      //rotate(rad);
       fill(200,200,255);
       ellipse(x,y,partSize/10,partSize);
       resetMatrix();
@@ -121,8 +121,8 @@ class Snowflake
     if (alive)
     {
       noStroke();
-      float rad = radians(deg);
-      rotate(rad);
+      //float rad = radians(deg);
+      //rotate(rad);
       fill(200,200,255);
       ellipse(x,y,partSize/10,partSize);
       resetMatrix();
@@ -138,8 +138,8 @@ class Snowflake
   }
   void erase()
   {
-    float rad = radians(deg);
-    rotate(rad);
+    //float rad = radians(deg);
+    //rotate(rad);
     fill(0);
     noStroke();
     ellipse(x,y,partSize/10,partSize);
